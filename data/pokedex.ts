@@ -19749,4 +19749,17 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Undiscovered"],
 		gen: 5,
 	},
+	ironpilot: {
+		num: -5015,
+		name: "Iron Pilot",
+		types: ["Steel", "Electric"],
+		gender: "N",
+		baseStats: {hp: 78, atk: 120, def: 100, spa: 120, spd: 60, spe: 112},
+		abilities: {0: "Quark Drive"},
+		heightm: 1.5,
+		weightkg: 75.2,
+		color: "White",
+		eggGroups: ["Undiscovered"],
+		gen: 9,
+	},
 };

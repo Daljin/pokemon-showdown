@@ -22043,6 +22043,66 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Electric",
 		contestType: "Cool",
 	},
+	technobeam: {
+		num: 1001,
+		accuracy: 100,
+		basePower: 100,
+		category: "Special",
+		isNonstandard: "Past",
+		name: "Techno Beam",
+		pp: 5,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		onModifyType(move, pokemon) {
+			if (pokemon.ignoringItem()) return;
+			move.type = this.runEvent('Drive', pokemon, null, move, 'Normal');
+		},
+		secondary: null,
+		target: "normal",
+		type: "Normal",
+		contestType: "Cool",
+	},
+	liftoff: {
+		num: 1002,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Lift Off",
+		pp: 15,
+		priority: 0,
+		flags: {snatch: 1, gravity: 1, metronome: 1},
+		volatileStatus: 'magnetrise',
+		onTry(source, target, move) {
+			if (target.volatiles['smackdown'] || target.volatiles['ingrain']) return false;
+
+			// Additional Gravity check for Z-move variant
+			if (this.field.getPseudoWeather('Gravity')) {
+				this.add('cant', source, 'move: Gravity', move);
+				return null;
+			}
+		},
+		condition: {
+			duration: 5,
+			onStart(target) {
+				this.add('-start', target, 'Magnet Rise');
+			},
+			onImmunity(type) {
+				if (type === 'Ground') return false;
+			},
+			onResidualOrder: 18,
+			onEnd(target) {
+				this.add('-end', target, 'Magnet Rise');
+			},
+		},
+		boosts: {
+			spe: 2,
+		},
+		secondary: null,
+		target: "self",
+		type: "Electric",
+		zMove: {boost: {spe: 1}},
+		contestType: "Clever",
+	},
 
 	// CAP moves
 

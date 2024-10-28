@@ -7624,4 +7624,96 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		gen: 8,
 		isNonstandard: "CAP",
 	},
+	dreaddrive: {
+		name: "Dread Drive",
+		spritenum: 54,
+		onUpdate(pokemon) {
+			if (!this.effectState.started || pokemon.transformed) return;
+			if (this.queue.peek(true)?.choice === 'runSwitch') return;
+			if (pokemon.hasAbility('quarkdrive') && !this.field.isTerrain('electricterrain') && pokemon.useItem()) {
+				pokemon.addVolatile('quarkdrive');
+			}
+		},
+		onTakeItem(item, pokemon, source) {
+			if ((source && source.baseSpecies.num === -5015) || pokemon.baseSpecies.num === -5015) {
+				return false;
+			}
+			return true;
+		},
+		onDrive: 'Dark',
+		forcedForme: "IronPilot-Dread",
+		itemUser: ["IronPilot-Dread"],
+		num: -3,
+		gen: 9,
+		isNonstandard: "Past",
+	},
+	thrashdrive: {
+		name: "Thrash Drive",
+		spritenum: 54,
+		onUpdate(pokemon) {
+			if (!this.effectState.started || pokemon.transformed) return;
+			if (this.queue.peek(true)?.choice === 'runSwitch') return;
+			if (pokemon.hasAbility('quarkdrive') && !this.field.isTerrain('electricterrain') && pokemon.useItem()) {
+				pokemon.addVolatile('quarkdrive');
+			}
+		},
+		onTakeItem(item, pokemon, source) {
+			if ((source && source.baseSpecies.num === -5015) || pokemon.baseSpecies.num === -5015) {
+				return false;
+			}
+			return true;
+		},
+		onDrive: 'Fighting',
+		forcedForme: "IronPilot-Thrash",
+		itemUser: ["IronPilot-Thrash"],
+		num: -4,
+		gen: 9,
+		isNonstandard: "Past",
+	},
+	pixiedrive: {
+		name: "Pixie Drive",
+		spritenum: 54,
+		onUpdate(pokemon) {
+			if (!this.effectState.started || pokemon.transformed) return;
+			if (this.queue.peek(true)?.choice === 'runSwitch') return;
+			if (pokemon.hasAbility('quarkdrive') && !this.field.isTerrain('electricterrain') && pokemon.useItem()) {
+				pokemon.addVolatile('quarkdrive');
+			}
+		},
+		onTakeItem(item, pokemon, source) {
+			if ((source && source.baseSpecies.num === -5015) || pokemon.baseSpecies.num === -5015) {
+				return false;
+			}
+			return true;
+		},
+		onDrive: 'Fairy',
+		forcedForme: "IronPilot-Fairy",
+		itemUser: ["IronPilot-Fairy"],
+		num: -5,
+		gen: 9,
+		isNonstandard: "Past",
+	},
+	minddrive: {
+		name: "Mind Drive",
+		spritenum: 54,
+		onUpdate(pokemon) {
+			if (!this.effectState.started || pokemon.transformed) return;
+			if (this.queue.peek(true)?.choice === 'runSwitch') return;
+			if (pokemon.hasAbility('quarkdrive') && !this.field.isTerrain('electricterrain') && pokemon.useItem()) {
+				pokemon.addVolatile('quarkdrive');
+			}
+		},
+		onTakeItem(item, pokemon, source) {
+			if ((source && source.baseSpecies.num === -5015) || pokemon.baseSpecies.num === -5015) {
+				return false;
+			}
+			return true;
+		},
+		onDrive: 'Psychic',
+		forcedForme: "IronPilot-Mind",
+		itemUser: ["IronPilot-Mind"],
+		num: -6,
+		gen: 9,
+		isNonstandard: "Past",
+	},
 };
