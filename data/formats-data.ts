@@ -6019,4 +6019,34 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		isNonstandard: "Custom",
 		tier: "Illegal",
 	},
+	ironpilot: {
+		isNonstandard: "Past",
+		tier: "OU",
+		natDexTier: "Uber",
+	},
+	ironpilotdread: {
+		isNonstandard: "Past",
+		tier: "OU",
+		natDexTier: "Uber",
+	},
+	ironpilotthrash: {
+		isNonstandard: "Past",
+		tier: "OU",
+		natDexTier: "Uber",
+	},
+	ironpilotpixie: {
+		isNonstandard: "Past",
+		tier: "OU",
+		natDexTier: "Uber",
+	},
+	ironpilotmind: {
+		isNonstandard: "Past",
+		tier: "OU",
+		natDexTier: "Uber",
+	},
+	flygonultra: {
+		isNonstandard: "Past",
+		tier: "OU",
+		natDexTier: "Uber",
+	},
 };

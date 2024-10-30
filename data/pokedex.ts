@@ -19761,6 +19761,8 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		color: "White",
 		eggGroups: ["Undiscovered"],
 		gen: 9,
+		otherFormes: ["IronPilot-Dread", "IronPilot-Thrash", "IronPilot-Pixie", "IronPilot-Mind"],
+		formeOrder: ["Iron Pilot", "IronPilot-Dread", "IronPilot-Thrash", "IronPilot-Pixie", "IronPilot-Mind"],
 	},
 	ironpilotdread: {
 		num: -5015,
