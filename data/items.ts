@@ -7627,10 +7627,10 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	dreaddrive: {
 		name: "Dread Drive",
 		spritenum: 54,
-		onUpdate(pokemon) {
+		onSwitchIn(pokemon) {
 			if (!this.effectState.started || pokemon.transformed) return;
 			if (this.queue.peek(true)?.choice === 'runSwitch') return;
-			if (pokemon.hasAbility('quarkdrive') && !this.field.isTerrain('electricterrain') && pokemon.useItem()) {
+			if (pokemon.hasAbility('quarkdrive') && pokemon.baseSpecies.num === -5015) {
 				pokemon.addVolatile('quarkdrive');
 			}
 		},
@@ -7645,15 +7645,14 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		itemUser: ["IronPilot-Dread"],
 		num: -3,
 		gen: 9,
-		isNonstandard: "Past",
 	},
 	thrashdrive: {
 		name: "Thrash Drive",
 		spritenum: 54,
-		onUpdate(pokemon) {
+		onSwitchIn(pokemon) {
 			if (!this.effectState.started || pokemon.transformed) return;
 			if (this.queue.peek(true)?.choice === 'runSwitch') return;
-			if (pokemon.hasAbility('quarkdrive') && !this.field.isTerrain('electricterrain') && pokemon.useItem()) {
+			if (pokemon.hasAbility('quarkdrive') && pokemon.baseSpecies.num === -5015) {
 				pokemon.addVolatile('quarkdrive');
 			}
 		},
@@ -7668,15 +7667,14 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		itemUser: ["IronPilot-Thrash"],
 		num: -4,
 		gen: 9,
-		isNonstandard: "Past",
 	},
 	pixiedrive: {
 		name: "Pixie Drive",
 		spritenum: 54,
-		onUpdate(pokemon) {
+		onSwitchIn(pokemon) {
 			if (!this.effectState.started || pokemon.transformed) return;
 			if (this.queue.peek(true)?.choice === 'runSwitch') return;
-			if (pokemon.hasAbility('quarkdrive') && !this.field.isTerrain('electricterrain') && pokemon.useItem()) {
+			if (pokemon.hasAbility('quarkdrive') && pokemon.baseSpecies.num === -5015) {
 				pokemon.addVolatile('quarkdrive');
 			}
 		},
@@ -7687,19 +7685,18 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 			return true;
 		},
 		onDrive: 'Fairy',
-		forcedForme: "IronPilot-Fairy",
-		itemUser: ["IronPilot-Fairy"],
+		forcedForme: "IronPilot-Pixie",
+		itemUser: ["IronPilot-Pixie"],
 		num: -5,
 		gen: 9,
-		isNonstandard: "Past",
 	},
 	minddrive: {
 		name: "Mind Drive",
 		spritenum: 54,
-		onUpdate(pokemon) {
+		onSwitchIn(pokemon) {
 			if (!this.effectState.started || pokemon.transformed) return;
 			if (this.queue.peek(true)?.choice === 'runSwitch') return;
-			if (pokemon.hasAbility('quarkdrive') && !this.field.isTerrain('electricterrain') && pokemon.useItem()) {
+			if (pokemon.hasAbility('quarkdrive') && pokemon.baseSpecies.num === -5015) {
 				pokemon.addVolatile('quarkdrive');
 			}
 		},
@@ -7714,6 +7711,5 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		itemUser: ["IronPilot-Mind"],
 		num: -6,
 		gen: 9,
-		isNonstandard: "Past",
 	},
 };
