@@ -19832,7 +19832,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		num: -5016,
 		name: "Flygon Ultra",
 		types: ["Steel", "Dragon"],
-		genderRatio: {M: 0.55, F: 0.50},
+		gender: "N",
 		baseStats: {hp: 80, atk: 90, def: 120, spa: 55, spd: 100, spe: 75},
 		abilities: {0: "Thick Fat", 1: "Weak Armor", H:"Tinted Lens"},
 		heightm: 1.5,
