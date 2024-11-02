@@ -7627,7 +7627,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	dreaddrive: {
 		name: "Dread Drive",
 		spritenum: 54,
-		onSwitchIn(pokemon) {
+		onUpdate(pokemon) {
 			if (!this.effectState.started || pokemon.transformed) return;
 			if (this.queue.peek(true)?.choice === 'runSwitch') return;
 			if (pokemon.hasAbility('quarkdrive') && pokemon.baseSpecies.num === -5015) {
@@ -7649,7 +7649,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	thrashdrive: {
 		name: "Thrash Drive",
 		spritenum: 54,
-		onSwitchIn(pokemon) {
+		onUpdate(pokemon) {
 			if (!this.effectState.started || pokemon.transformed) return;
 			if (this.queue.peek(true)?.choice === 'runSwitch') return;
 			if (pokemon.hasAbility('quarkdrive') && pokemon.baseSpecies.num === -5015) {
@@ -7671,7 +7671,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	pixiedrive: {
 		name: "Pixie Drive",
 		spritenum: 54,
-		onSwitchIn(pokemon) {
+		onUpdate(pokemon) {
 			if (!this.effectState.started || pokemon.transformed) return;
 			if (this.queue.peek(true)?.choice === 'runSwitch') return;
 			if (pokemon.hasAbility('quarkdrive') && pokemon.baseSpecies.num === -5015) {
@@ -7693,7 +7693,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	minddrive: {
 		name: "Mind Drive",
 		spritenum: 54,
-		onSwitchIn(pokemon) {
+		onUpdate(pokemon) {
 			if (!this.effectState.started || pokemon.transformed) return;
 			if (this.queue.peek(true)?.choice === 'runSwitch') return;
 			if (pokemon.hasAbility('quarkdrive') && pokemon.baseSpecies.num === -5015) {
@@ -7711,5 +7711,27 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		itemUser: ["IronPilot-Mind"],
 		num: -6,
 		gen: 9,
+	},
+	poisonousseed: {
+		name: "Poisonous Seed",
+		spritenum: 665,
+		fling: {
+			basePower: 10,
+		},
+		onStart(pokemon) {
+			if (!pokemon.ignoringItem() && this.field.isTerrain('corrosiveterrain')) {
+				pokemon.useItem();
+			}
+		},
+		onTerrainChange(pokemon) {
+			if (this.field.isTerrain('corrosiveterrain')) {
+				pokemon.useItem();
+			}
+		},
+		boosts: {
+			spd: 1,
+		},
+		num: -7,
+		gen: 7,
 	},
 };

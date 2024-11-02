@@ -6049,4 +6049,14 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "OU",
 		natDexTier: "Uber",
 	},
+	tapukehe: {
+		isNonstandard: "Past",
+		tier: "OU",
+		natDexTier: "Uber",
+	},
+	ectarachnid: {
+		isNonstandard: "Past",
+		tier: "OU",
+		natDexTier: "Uber",
+	},
 };

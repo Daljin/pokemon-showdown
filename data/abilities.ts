@@ -687,6 +687,13 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	corrosion: {
 		// Implemented in sim/pokemon.js:Pokemon#setStatus
+		onModifyMove(move) {
+			move.ignoreEvasion = true;
+			if (!move.ignoreImmunity) move.ignoreImmunity = {};
+			if (move.ignoreImmunity !== true) {
+				move.ignoreImmunity['Steel'] = true;
+			}
+		},
 		flags: {},
 		name: "Corrosion",
 		rating: 2.5,
@@ -2515,6 +2522,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	merciless: {
 		onModifyCritRatio(critRatio, source, target) {
 			if (target && ['psn', 'tox'].includes(target.status)) return 5;
+			else if (target && this.field.isTerrain('corrosiveterrain')) return 5;
 		},
 		flags: {},
 		name: "Merciless",
@@ -2539,6 +2547,9 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				break;
 			case 'psychicterrain':
 				types = ['Psychic'];
+				break;
+			case 'corrosiveterrain':
+				types = ['Poison'];
 				break;
 			default:
 				types = pokemon.baseSpecies.types;
@@ -3243,7 +3254,10 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	poisonheal: {
 		onDamagePriority: 1,
 		onDamage(damage, target, source, effect) {
-			if (effect.id === 'psn' || effect.id === 'tox') {
+			if (this.field.isTerrain('corrosiveterrain') && (effect.id === 'psn' || effect.id === 'tox')) {
+				this.heal(target.baseMaxhp / 6);
+				return false;
+			} else if (effect.id === 'psn' || effect.id === 'tox') {
 				this.heal(target.baseMaxhp / 8);
 				return false;
 			}
@@ -3256,7 +3270,11 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	poisonpoint: {
 		onDamagingHit(damage, target, source, move) {
 			if (this.checkMoveMakesContact(move, source, target)) {
-				if (this.randomChance(3, 10)) {
+				if (this.field.isTerrain('corrosiveterrain')) {
+					if (this.randomChance(6, 10)) {
+						source.trySetStatus('psn', target);
+					}
+				} else if (this.randomChance(3, 10)) {
 					source.trySetStatus('psn', target);
 				}
 			}
@@ -5008,7 +5026,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	toxicboost: {
 		onBasePowerPriority: 19,
 		onBasePower(basePower, attacker, defender, move) {
-			if ((attacker.status === 'psn' || attacker.status === 'tox') && move.category === 'Physical') {
+			if ((attacker.status === 'psn' || attacker.status === 'tox' || this.field.isTerrain('corrosiveterrain')) && move.category === 'Physical') {
 				return this.chainModify(1.5);
 			}
 		},
@@ -5021,8 +5039,11 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onSourceDamagingHit(damage, target, source, move) {
 			// Despite not being a secondary, Shield Dust / Covert Cloak block Toxic Chain's effect
 			if (target.hasAbility('shielddust') || target.hasItem('covertcloak')) return;
-
-			if (this.randomChance(3, 10)) {
+			if (this.field.isTerrain('corrosiveterrain')) {
+				if (this.randomChance(6, 10)) {
+					target.trySetStatus('tox', source);
+				}
+			} else if (this.randomChance(3, 10)) {
 				target.trySetStatus('tox', source);
 			}
 		},
@@ -5650,5 +5671,14 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Persistent",
 		rating: 3,
 		num: -4,
+	},
+	corrosivesurge: {
+		onStart(source) {
+			this.field.setTerrain('corrosiveerrain');
+		},
+		flags: {},
+		name: "Corrosive Surge",
+		rating: 4,
+		num: -5,
 	},
 };

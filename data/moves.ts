@@ -2240,6 +2240,8 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				newType = 'Fairy';
 			} else if (this.field.isTerrain('psychicterrain')) {
 				newType = 'Psychic';
+			} else if (this.field.isTerrain('corrosiveterrain')) {
+				newType = 'Poison';
 			}
 
 			if (target.getTypes().join() === newType || !target.setType(newType)) return false;
@@ -9951,7 +9953,11 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			},
 			onResidualOrder: 7,
 			onResidual(pokemon) {
-				this.heal(pokemon.baseMaxhp / 16);
+				if (this.field.isTerrain('corrosiveterrain')) {
+					this.damage(pokemon.baseMaxhp / 16);
+				}else{
+					this.heal(pokemon.baseMaxhp / 16);
+				}
 			},
 			onTrapPokemon(pokemon) {
 				pokemon.tryTrap();
@@ -13045,6 +13051,8 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				move = 'moonblast';
 			} else if (this.field.isTerrain('psychicterrain')) {
 				move = 'psychic';
+			}else if (this.field.isTerrain('corrosiveterrain')) {
+				move = 'sludgewave';
 			}
 			this.actions.useMove(move, pokemon, {target});
 			return null;
@@ -16493,6 +16501,11 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				move.secondaries.push({
 					chance: 30,
 					status: 'slp',
+				});
+			} else if (this.field.isTerrain('corrosiveterrain')) {
+				move.secondaries.push({
+					chance: 30,
+					status: 'psn',
 				});
 			} else if (this.field.isTerrain('mistyterrain')) {
 				move.secondaries.push({
@@ -20017,6 +20030,9 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			case 'psychicterrain':
 				move.type = 'Psychic';
 				break;
+			case 'corrosiveterrain':
+				move.type = 'Poison';
+				break;
 			}
 		},
 		onModifyMove(move, pokemon) {
@@ -20518,7 +20534,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			},
 			onEntryHazard(pokemon) {
 				if (!pokemon.isGrounded()) return;
-				if (pokemon.hasType('Poison')) {
+				if (pokemon.hasType('Poison') && !this.field.isTerrain('corrosiveterrain')) {
 					this.add('-sideend', pokemon.side, 'move: Toxic Spikes', '[of] ' + pokemon);
 					pokemon.side.removeSideCondition('toxicspikes');
 				} else if (pokemon.hasType('Steel') || pokemon.hasItem('heavydutyboots')) {
@@ -22145,6 +22161,64 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "normal",
 		type: "Steel",
 		contestType: "Tough",
+	},
+	corrosiveterrain: {
+		num: 1004,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Corrosive Terrain",
+		pp: 10,
+		priority: 0,
+		flags: {nonsky: 1, metronome: 1},
+		terrain: 'corrosiveterrain',
+		condition: {
+			duration: 5,
+			durationCallback(source, effect) {
+				if (source?.hasItem('terrainextender')) {
+					return 8;
+				}
+				return 5;
+			},
+			onBasePowerPriority: 6,
+			onBasePower(basePower, attacker, defender, move) {
+				const strengthenMoves = ['Venoshock'];
+				if (strengthenMoves.includes(move.id) && defender.isGrounded() && !defender.isSemiInvulnerable()) {
+					this.debug('move strenghted by corrosive terrain');
+					return this.chainModify(1.5);
+				}
+				if (move.type === 'Steel') {
+					this.debug('Steel corroding');
+					return this.chainModify(0.5);
+				}
+			},
+			onFieldStart(field, source, effect) {
+				if (effect?.effectType === 'Ability') {
+					this.add('-fieldstart', 'move: Corrosive Terrain', '[from] ability: ' + effect.name, '[of] ' + source);
+				} else {
+					this.add('-fieldstart', 'move: Corrosive Terrain');
+				}
+			},
+			onResidualOrder: 5,
+			onResidualSubOrder: 2,
+			onResidual(pokemon) {
+				if (pokemon.isGrounded() && pokemon.status && !pokemon.isSemiInvulnerable() && !pokemon.hasType(['Steel','Poison']) && !pokemon.hasAbility(['Toxic Boost', 'Magic Guard', 'Poison Heal', 'Immunity', 'Pastel Veil', 'Wonder Guard'])) {
+					this.damage(pokemon.baseMaxhp / 16, pokemon, pokemon);
+				} else {
+					this.debug(`Pokemon semi-invuln or not grounded; Corrosive Terrain skipped`);
+				}
+			},
+			onFieldResidualOrder: 27,
+			onFieldResidualSubOrder: 7,
+			onFieldEnd() {
+				this.add('-fieldend', 'move: Corrisive Terrain');
+			},
+		},
+		secondary: null,
+		target: "all",
+		type: "Poison",
+		zMove: {boost: {def: 1}},
+		contestType: "Cool",
 	},
 
 	// CAP moves
