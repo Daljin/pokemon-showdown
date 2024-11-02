@@ -7628,7 +7628,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Dread Drive",
 		spritenum: 54,
 		onUpdate(pokemon) {
-			if (!this.effectState.started || pokemon.transformed) return;
 			if (this.queue.peek(true)?.choice === 'runSwitch') return;
 			if (pokemon.hasAbility('quarkdrive') && pokemon.baseSpecies.num === -5015) {
 				pokemon.addVolatile('quarkdrive');
@@ -7650,7 +7649,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Thrash Drive",
 		spritenum: 54,
 		onUpdate(pokemon) {
-			if (!this.effectState.started || pokemon.transformed) return;
 			if (this.queue.peek(true)?.choice === 'runSwitch') return;
 			if (pokemon.hasAbility('quarkdrive') && pokemon.baseSpecies.num === -5015) {
 				pokemon.addVolatile('quarkdrive');
@@ -7672,7 +7670,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Pixie Drive",
 		spritenum: 54,
 		onUpdate(pokemon) {
-			if (!this.effectState.started || pokemon.transformed) return;
 			if (this.queue.peek(true)?.choice === 'runSwitch') return;
 			if (pokemon.hasAbility('quarkdrive') && pokemon.baseSpecies.num === -5015) {
 				pokemon.addVolatile('quarkdrive');
@@ -7694,7 +7691,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Mind Drive",
 		spritenum: 54,
 		onUpdate(pokemon) {
-			if (!this.effectState.started || pokemon.transformed) return;
 			if (this.queue.peek(true)?.choice === 'runSwitch') return;
 			if (pokemon.hasAbility('quarkdrive') && pokemon.baseSpecies.num === -5015) {
 				pokemon.addVolatile('quarkdrive');

@@ -6059,4 +6059,14 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "OU",
 		natDexTier: "Uber",
 	},
+	meloettadelta: {
+		isNonstandard: "Past",
+		tier: "OU",
+		natDexTier: "Uber",
+	},
+	meloettadeltaallegro: {
+		isNonstandard: "Past",
+		tier: "OU",
+		natDexTier: "Uber",
+	},
 };

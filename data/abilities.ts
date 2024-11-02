@@ -688,7 +688,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	corrosion: {
 		// Implemented in sim/pokemon.js:Pokemon#setStatus
 		onModifyMove(move) {
-			move.ignoreEvasion = true;
 			if (!move.ignoreImmunity) move.ignoreImmunity = {};
 			if (move.ignoreImmunity !== true) {
 				move.ignoreImmunity['Steel'] = true;
@@ -5674,7 +5673,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	corrosivesurge: {
 		onStart(source) {
-			this.field.setTerrain('corrosiveerrain');
+			this.field.setTerrain('corrosiveterrain');
 		},
 		flags: {},
 		name: "Corrosive Surge",
