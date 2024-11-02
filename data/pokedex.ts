@@ -19868,7 +19868,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Bug"],
 	},
 	meloettadelta: {
-		num: 648,
+		num: -5019,
 		name: "Meloetta Delta",
 		baseForme: "Lento",
 		types: ["Normal", "Water"],
@@ -19884,7 +19884,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		formeOrder: ["Meloetta Delta", "Meloetta-Allegro"],
 	},
 	meloettadeltaallegro: {
-		num: 648,
+		num: -5020,
 		name: "Meloetta-Allegro",
 		baseSpecies: "Meloetta Delta",
 		forme: "Allegro",
