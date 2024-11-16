@@ -93089,6 +93089,9 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 	ogerponcornerstone: {
 		eventOnly: true,
 	},
+	ogerponstormpeak: {
+		eventOnly: true,
+	},
 	archaludon: {
 		learnset: {
 			aurasphere: ["9M"],
@@ -105836,6 +105839,9 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			bind: ["9M"],
 			defog: ["9M"],
 		},
+	},
+	malevorustherian: {
+		eventOnly: true,
 	},
 	manteon: {
 		learnset: {
