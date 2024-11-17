@@ -5680,4 +5680,146 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 4,
 		num: -5,
 	},
+	usurped: {
+		condition: {
+			duration: 3,
+			onStart(target) {
+				if (target.activeTurns && !this.queue.willMove(target)) {
+					this.effectState.duration++;
+				}
+				this.add('-start', target, 'move: Taunt');
+			},
+			onResidualOrder: 15,
+			onEnd(target) {
+				this.add('-end', target, 'move: Taunt');
+			},
+			onDisableMove(pokemon) {
+				for (const moveSlot of pokemon.moveSlots) {
+					const move = this.dex.moves.get(moveSlot.id);
+					if (move.category === 'Status' && move.id !== 'mefirst') {
+						pokemon.disableMove(moveSlot.id);
+					}
+				}
+			},
+		},
+		flags: {},
+		name: "Usurped",
+		rating: 4,
+		num: -6,
+	},
+	usurper: {
+		onDamagingHitOrder: 1,
+		condition: {
+			duration: 3,
+			onDamagingHit(damage, target, source, move) {
+				if (this.checkMoveMakesContact(move, source, target, true)) {
+					source.setStatus('par', target);
+					source.addVolatile('trapped', target, move, 'trapper');
+				}
+			},
+			onEnd(target) {
+				this.add('-end', target, target.volatiles['trapped'].sourceEffect, '[trapped]', '[silent]');
+			},
+		},
+		flags: {},
+		name: "Usurper",
+		rating: 4,
+		num: -7,
+	},
+	deathdefiance: {
+		onTryHit(pokemon, target, move) {
+			if (move.ohko) {
+				this.add('-immune', pokemon, '[from] ability: Sturdy');
+				return null;
+			}
+		},
+		onDamagePriority: -30,
+		onDamage(damage, target, source, effect) {
+			if (damage >= target.hp && effect && effect.effectType === 'Move') { //logic might be wrong here.
+				this.add('-ability', target, 'Sturdy');
+				return target.hp - 1;
+			}
+		},
+		flags: {},
+		name: "Death Defiance",
+		rating: 4,
+		num: -8,
+	},
+	darkdecree: {
+		flags: {},
+		name: "Dark Decree",
+		rating: 4,
+		num: -9,
+	},
+	quickwit: {
+		onBasePowerPriority: 30,
+		onModifyPriority(priority, pokemon, target, move) {
+			const basePowerAfterMultiplier = this.modify(move.basePower, this.event.modifier);
+			this.debug('Base Power: ' + basePowerAfterMultiplier);
+			if (basePowerAfterMultiplier <= 60) {
+				return priority + 1
+			}
+		},
+		flags: {},
+		name: "Quick Wit",
+		rating: 4,
+		num: -10,
+	},
+	pureguise: {
+		onBasePower(basePower, attacker, defender, move) {
+			if (attacker.hp >= attacker.maxhp) {
+				this.debug('Multiscale weaken');
+				return this.chainModify(1.5);
+			}
+		},
+		flags: {},
+		name: "Pure Guise",
+		rating: 4,
+		num: -11,
+	},
+	tangibility: {
+		onModifyMove(move) {
+			if (!move.ignoreImmunity) move.ignoreImmunity = {};
+			if (move.ignoreImmunity !== true) {
+				move.ignoreImmunity['Normal'] = true;
+			}
+		},
+		onModifyDamage(damage, source, target, move) {
+			if (target.getMoveHitData(move).typeMod < 0 && move.type === 'Ghost') {
+				this.debug('Tinted Lens boost');
+				return this.chainModify(2);
+			}
+		},
+		flags: {},
+		name: "Tangibility",
+		rating: 4,
+		num: -12,
+	},
+	geyser: {
+		onModifyMove(move) {
+			if (move.secondaries) {
+				this.debug('doubling secondary chance');
+				for (const secondary of move.secondaries) {
+					if (secondary.chance && secondary.status === "brn") secondary.chance *= 3;
+				}
+			}
+		},
+		onTryHitPriority: 1,
+		onTryHit(target, source, move) {
+			if (target !== source && move.type === 'Water') {
+				this.add('-immune', target, '[from] ability: Geyser');
+				return null;
+			}
+		},
+		onAllyTryHitSide(target, source, move) {
+			if (source === this.effectState.target || !target.isAlly(source)) return;
+			if (move.type === 'Water') {
+				this.add('-immune', target, '[from] ability: Geyser');
+			}
+		},
+		flags: {},
+		name: "Geyser",
+		rating: 4,
+		num: -12,
+	}
 };

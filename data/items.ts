@@ -7627,14 +7627,25 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	dreaddrive: {
 		name: "Dread Drive",
 		spritenum: 54,
+		fling: {
+			basePower: 30,
+		},
+		onStart() {
+			this.effectState.started = true;
+		},
 		onUpdate(pokemon) {
+			if (!this.effectState.started || pokemon.transformed) return;
 			if (this.queue.peek(true)?.choice === 'runSwitch') return;
-			if (pokemon.hasAbility('quarkdrive') && pokemon.baseSpecies.num === -5015) {
+
+			if (pokemon.hasAbility('protosynthesis') && !this.field.isWeather('sunnyday') && pokemon.useItem()) {
+				pokemon.addVolatile('protosynthesis');
+			}
+			if (pokemon.hasAbility('quarkdrive') && !this.field.isTerrain('electricterrain') && pokemon.useItem()) {
 				pokemon.addVolatile('quarkdrive');
 			}
 		},
-		onTakeItem(item, pokemon, source) {
-			if ((source && source.baseSpecies.num === -5015) || pokemon.baseSpecies.num === -5015) {
+		onTakeItem(item, source) {
+			if ((source && source.baseSpecies.num === -5015)) {
 				return false;
 			}
 			return true;
@@ -7648,14 +7659,25 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	thrashdrive: {
 		name: "Thrash Drive",
 		spritenum: 54,
+		fling: {
+			basePower: 30,
+		},
+		onStart() {
+			this.effectState.started = true;
+		},
 		onUpdate(pokemon) {
+			if (!this.effectState.started || pokemon.transformed) return;
 			if (this.queue.peek(true)?.choice === 'runSwitch') return;
-			if (pokemon.hasAbility('quarkdrive') && pokemon.baseSpecies.num === -5015) {
+
+			if (pokemon.hasAbility('protosynthesis') && !this.field.isWeather('sunnyday') && pokemon.useItem()) {
+				pokemon.addVolatile('protosynthesis');
+			}
+			if (pokemon.hasAbility('quarkdrive') && !this.field.isTerrain('electricterrain') && pokemon.useItem()) {
 				pokemon.addVolatile('quarkdrive');
 			}
 		},
-		onTakeItem(item, pokemon, source) {
-			if ((source && source.baseSpecies.num === -5015) || pokemon.baseSpecies.num === -5015) {
+		onTakeItem(item, source) {
+			if ((source && source.baseSpecies.num === -5015)) {
 				return false;
 			}
 			return true;
@@ -7669,14 +7691,25 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	pixiedrive: {
 		name: "Pixie Drive",
 		spritenum: 54,
+		fling: {
+			basePower: 30,
+		},
+		onStart() {
+			this.effectState.started = true;
+		},
 		onUpdate(pokemon) {
+			if (!this.effectState.started || pokemon.transformed) return;
 			if (this.queue.peek(true)?.choice === 'runSwitch') return;
-			if (pokemon.hasAbility('quarkdrive') && pokemon.baseSpecies.num === -5015) {
+
+			if (pokemon.hasAbility('protosynthesis') && !this.field.isWeather('sunnyday') && pokemon.useItem()) {
+				pokemon.addVolatile('protosynthesis');
+			}
+			if (pokemon.hasAbility('quarkdrive') && !this.field.isTerrain('electricterrain') && pokemon.useItem()) {
 				pokemon.addVolatile('quarkdrive');
 			}
 		},
-		onTakeItem(item, pokemon, source) {
-			if ((source && source.baseSpecies.num === -5015) || pokemon.baseSpecies.num === -5015) {
+		onTakeItem(item, source) {
+			if ((source && source.baseSpecies.num === -5015)) {
 				return false;
 			}
 			return true;
@@ -7690,14 +7723,25 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	minddrive: {
 		name: "Mind Drive",
 		spritenum: 54,
+		fling: {
+			basePower: 30,
+		},
+		onStart() {
+			this.effectState.started = true;
+		},
 		onUpdate(pokemon) {
+			if (!this.effectState.started || pokemon.transformed) return;
 			if (this.queue.peek(true)?.choice === 'runSwitch') return;
-			if (pokemon.hasAbility('quarkdrive') && pokemon.baseSpecies.num === -5015) {
+
+			if (pokemon.hasAbility('protosynthesis') && !this.field.isWeather('sunnyday') && pokemon.useItem()) {
+				pokemon.addVolatile('protosynthesis');
+			}
+			if (pokemon.hasAbility('quarkdrive') && !this.field.isTerrain('electricterrain') && pokemon.useItem()) {
 				pokemon.addVolatile('quarkdrive');
 			}
 		},
-		onTakeItem(item, pokemon, source) {
-			if ((source && source.baseSpecies.num === -5015) || pokemon.baseSpecies.num === -5015) {
+		onTakeItem(item, source) {
+			if ((source && source.baseSpecies.num === -5015)) {
 				return false;
 			}
 			return true;
