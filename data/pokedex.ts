@@ -19839,8 +19839,6 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		heightm: 2,
 		weightkg: 170,
 		color: "Green",
-		prevo: "Vibrava",
-		evoLevel: 45,
 		eggGroups: ["Bug", "Dragon"],
 	},
 	tapukehe: {
