@@ -741,7 +741,7 @@ export const Scripts: ModdedBattleScriptsData = {
 				const bondModifier = this.battle.gen > 6 && !pokemon.hasAbility('Almost Frosty') ? 0.25 : 0.5;
 				this.battle.debug(`Parental Bond modifier: ${bondModifier}`);
 				baseDamage = this.battle.modify(baseDamage, bondModifier);
-			}
+			} 
 
 			// weather modifier
 			baseDamage = this.battle.runEvent('WeatherModifyDamage', pokemon, target, move, baseDamage);

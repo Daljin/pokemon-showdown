@@ -5820,6 +5820,281 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		flags: {},
 		name: "Geyser",
 		rating: 4,
-		num: -12,
+		num: -13,
+	},
+	monarch: {
+		onResidualOrder: 28,
+		onResidualSubOrder: 2,
+		onResidual(pokemon) {
+			if (pokemon.hp >= pokemon.maxhp) {
+				pokemon.cureStatus();
+			}
+		},
+		flags: {breakable: 1},
+		name: "Monarch",
+		rating: 3.5,
+		num: -14,
+	},
+	surge: {
+		onModifyAtkPriority: 5,
+		onModifyAtk(atk, attacker, defender, move) {
+			if (move.type === 'Electric' && attacker.hp <= attacker.maxhp / 3) {
+				this.debug('Surge boost');
+				return this.chainModify(1.5);
+			}
+		},
+		onModifySpAPriority: 5,
+		onModifySpA(atk, attacker, defender, move) {
+			if (move.type === 'Electric' && attacker.hp <= attacker.maxhp / 3) {
+				this.debug('Surge boost');
+				return this.chainModify(1.5);
+			}
+		},
+		flags: {},
+		name: "Surge",
+		rating: 2,
+		num: -15,
+	},
+	parasolprayer: {
+		onStart(source) {
+			this.field.setWeather('deltastream');
+		},
+		onAnySetWeather(target, source, weather) {
+			const strongWeathers = ['desolateland', 'primordialsea', 'deltastream'];
+			if (this.field.getWeather().id === 'deltastream' && !strongWeathers.includes(weather.id)) return false;
+		},
+		onEnd(pokemon) {
+			if (this.field.weatherState.source !== pokemon) return;
+			for (const target of this.getAllActive()) {
+				if (target === pokemon) continue;
+				if (target.hasAbility('deltastream')) {
+					this.field.weatherState.source = target;
+					return;
+				}
+			}
+			this.field.clearWeather();
+		},
+		flags: {},
+		name: "Parasol Prayer",
+		rating: 4,
+		num: -16,
+	},
+	abyssalneigh: {
+		onSourceAfterFaint(length, target, source, effect) {
+			if (effect && effect.effectType === 'Move') {
+				this.boost({spd: length}, source);
+			}
+		},
+		flags: {},
+		name: "Abyssal Neigh",
+		rating: 3,
+		num: -17,
+	},
+	covenant: {
+		onModifyAtkPriority: 5,
+		onModifyAtk(atk, pokemon) {
+			if (pokemon.hp >= pokemon.maxhp / 2) {
+				return this.chainModify(0.5);
+			}
+			if (pokemon.ability !== 'Huge Power' && pokemon.hp <= pokemon.maxhp / 2) {
+				pokemon.setAbility('Huge Power');
+			}
+		},
+		onModifySpePriority: 5,
+		onModifySpe(atk, pokemon) {
+			if (pokemon.hp >= pokemon.maxhp / 2) {
+				return this.chainModify(0.5);
+			}
+			if (pokemon.ability !== 'Huge Power' && pokemon.hp <= pokemon.maxhp / 2) {
+				pokemon.setAbility('Huge Power');
+			}
+		},
+		flags: {},
+		name: "Defeatist",
+		rating: -1,
+		num: -18,
+	},
+	desertspirit: {
+		onModifyTypePriority: -1,
+		onModifyType(move, pokemon) {
+			if (this.field.isWeather('sandstorm')) { // hardcode
+				move.flags['sound'] = 1;
+			}
+		},
+		onBasePowerPriority: 7,
+		onBasePower(basePower, attacker, defender, move) {
+			if (move.flags['sound']) {
+				this.debug('Punk Rock boost');
+				return this.chainModify([5325, 4096]);
+			}
+		},
+		onSourceModifyDamage(damage, source, target, move) {
+			if (move.flags['sound']) {
+				this.debug('Punk Rock weaken');
+				return this.chainModify(0.5);
+			}
+		},
+		flags: {breakable: 1},
+		name: "Desert Spirit",
+		rating: 3.5,
+		num: -19,
+	},
+	monarchpole: {
+		onSourceAfterFaint(length, target, source, effect) {
+			if (effect && effect.effectType === 'Move') {
+				this.boost({spe: length}, source);
+			}
+		},
+		//implemented at battle#checkMoveMakesContact
+		flags: {},
+		name: "Monarch's Pole",
+		rating: 3.5,
+		num: -20,
+	},
+	swordmaster: {
+		onModifySpe(spe, pokemon) {
+			if (['sunnyday', 'desolateland'].includes(pokemon.effectiveWeather())) {
+				return this.chainModify(2);
+			}
+		},
+		onBasePowerPriority: 19,
+		onBasePower(basePower, attacker, defender, move) {
+			if (move.flags['slicing']) {
+				this.debug('Sharpness boost');
+				return this.chainModify(1.5);
+			}
+		},
+		flags: {},
+		name: "Swordmaster",
+		rating: 3.5,
+		num: -21,
+	},
+	shapeshift: {
+		onDamagingHit(damage, target, source, move) {
+			if (move.name === 'Bitter Malice') {
+				// Imposter does not activate when Skill Swapped or when Neutralizing Gas leaves the field
+				if (!this.effectState.switchingIn) return;
+				// copies across in doubles/triples
+				// (also copies across in multibattle and diagonally in free-for-all,
+				// but side.foe already takes care of those)
+				const targetCopy = source.side.foe.active[source.side.foe.active.length - 1 - source.position];
+				if (targetCopy) {
+					source.transformInto(targetCopy, this.dex.abilities.get('imposter'));
+				}
+				this.effectState.switchingIn = false;
+			}		
+		},
+		flags: {failroleplay: 1, noreceiver: 1, noentrain: 1, notrace: 1, failskillswap: 1, cantsuppress: 1, notransform: 1},
+		name: "Shapeshift",
+		rating: 3.5,
+		num: -22,
+	},
+	welkintorch: {
+		onDamage(damage, target, source, effect) {
+			if (effect.id === 'recoil') {
+				if (!this.activeMove) throw new Error("Battle.activeMove is null");
+				if (this.activeMove.id !== 'struggle') return null;
+			}
+		},
+		flags: {},
+		name: "Welkin Torch",
+		rating: 3.5,
+		num: -23,
+	},
+	vorpal: {
+		onModifySpePriority: 5,
+		onModifySpe(spe, pokemon) {
+			if (pokemon.status) {
+				return this.chainModify(1.5);
+			}
+		},
+		flags: {},
+		name: "Vorpal",
+		rating: 3.5,
+		num: -24,
+	},
+	chronocatalyst: {
+		onStart(pokemon) {
+			this.singleEvent('WeatherChange', this.effect, this.effectState, pokemon);
+			this.singleEvent('TerrainChange', this.effect, this.effectState, pokemon);
+		},
+		onWeatherChange(pokemon) {
+			// Protosynthesis is not affected by Utility Umbrella
+			if (this.field.isWeather('sunnyday')) {
+				pokemon.addVolatile('chronocatalyst');
+			} else if (!pokemon.volatiles['chronocatalyst']?.fromBooster && this.field.weather !== 'sunnyday') {
+				// Protosynthesis will not deactivite if Sun is suppressed, hence the direct ID check (isWeather respects supression)
+				pokemon.removeVolatile('chronocatalyst');
+			}
+		},
+		onTerrainChange(pokemon) {
+			if (this.field.isTerrain('electricterrain')) {
+				pokemon.addVolatile('chronocatalyst');
+			} else if (!pokemon.volatiles['chronocatalyst']?.fromBooster) {
+				pokemon.removeVolatile('chronocatalyst');
+			}
+		},
+		onEnd(pokemon) {
+			delete pokemon.volatiles['chronocatalyst'];
+			this.add('-end', pokemon, 'Chrono Catalyst', '[silent]');
+		},
+		condition: {
+			noCopy: true,
+			onStart(pokemon, source, effect) {
+				if (effect?.name === 'Booster Energy') {
+					this.effectState.fromBooster = true;
+					this.add('-activate', pokemon, 'ability: Chrono Catalyst', '[fromitem]');
+				} else {
+					this.add('-activate', pokemon, 'ability: Chrono Catalyst');
+				}
+				this.effectState.bestStat = pokemon.getBestStat(false, true);
+				this.add('-start', pokemon, 'chronocatalyst' + this.effectState.bestStat);
+			},
+			onModifyAtkPriority: 5,
+			onModifyAtk(atk, pokemon) {
+				if (this.effectState.bestStat !== 'atk' || pokemon.ignoringAbility()) return;
+				this.debug('Chrono Catalyst atk boost');
+				return this.chainModify([5325, 4096]);
+			},
+			onModifyDefPriority: 6,
+			onModifyDef(def, pokemon) {
+				if (this.effectState.bestStat !== 'def' || pokemon.ignoringAbility()) return;
+				this.debug('Chrono Catalyst def boost');
+				return this.chainModify([5325, 4096]);
+			},
+			onModifySpAPriority: 5,
+			onModifySpA(spa, pokemon) {
+				if (this.effectState.bestStat !== 'spa' || pokemon.ignoringAbility()) return;
+				this.debug('Chrono Catalyst spa boost');
+				return this.chainModify([5325, 4096]);
+			},
+			onModifySpDPriority: 6,
+			onModifySpD(spd, pokemon) {
+				if (this.effectState.bestStat !== 'spd' || pokemon.ignoringAbility()) return;
+				this.debug('Chrono Catalyst spd boost');
+				return this.chainModify([5325, 4096]);
+			},
+			onModifySpe(spe, pokemon) {
+				if (this.effectState.bestStat !== 'spe' || pokemon.ignoringAbility()) return;
+				this.debug('Chrono Catalyst spe boost');
+				return this.chainModify(1.5);
+			},
+			onEnd(pokemon) {
+				this.add('-end', pokemon, 'Chrono Catalyst');
+			},
+			
+		},
+		flags: {},
+		name: "Chrono Catalyst",
+		rating: 3.5,
+		num: -25,
+	},
+	spectreonslaught: {
+		//missing implementation
+		flags: {},
+		name: "Spectre Onslaught",
+		rating: 3.5,
+		num: -25,
 	}
+	//
 };

@@ -70,6 +70,11 @@ export const Scripts: ModdedBattleScriptsData = {
 					baseDamage = this.battle.modify(baseDamage, 0.5);
 				}
 			}
+			if (pokemon.status === 'brn' && move.category === 'Physical' && !pokemon.hasAbility('vorpal')) {
+				if (this.battle.gen < 6 || move.id !== 'facade') {
+					baseDamage = this.battle.modify(baseDamage, 0.5);
+				}
+			}
 			if (this.battle.gen === 5 && !baseDamage) baseDamage = 1;
 			baseDamage = this.battle.runEvent('ModifyDamage', pokemon, target, move, baseDamage);
 			if (move.isZOrMaxPowered && target.getMoveHitData(move).zBrokeProtect) {

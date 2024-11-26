@@ -7546,4 +7546,104 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 			shortDesc: "Nearly always goes first. Always crits.",
 		},
 	},
+	chillingsilence: {
+		name: "Chilling Silence",
+		desc: "Chilling Silence inflicts damage and always makes the target flinch if used on the first turn. If used any other turn, it inflicts damage but it has no secondary effect. It loses priority after the first turn.",
+		shortDesc: "Chilling Silence inflicts damage and always makes the target flinch if used on the first turn. If used any other turn, it inflicts damage but it has no secondary effect. It loses priority after the first turn.",
+	},
+	technobeam: {
+		name: "Techno Beam",
+		desc: "This move's type depends on the drive being used. Dread Drive: Dark-type, Thrash Drive: Fighting-type, Pixie Drive: Fairy-type, Mind Drive: Psychic-type",
+		shortDesc: "This move's type depends on the drive being used.",
+	},
+	dragondrive: {
+		name: "Dragon Drive",
+		desc: "This Pokemon's Special Attack and Speed are raised by one stage.",
+		shortDesc: "This Pokemon's Special Attack and Speed are raised by one stage.",
+	},
+	noxiouspower: {
+		name: "Noxious Power",
+		desc: "Noxious Power inflicts damage. Its power is doubled to 140 if the target is poisoned. Has a 50% chance to raise the user's Sp.Atk by +1.",
+		shortDesc: "Noxious Power inflicts damage. Its power is doubled to 140 if the target is poisoned. Has a 50% chance to raise the user's Sp.Atk by +1.",
+	},
+	heatsiphon: {
+		name: "Heat Siphon",
+		desc: "Heat Siphon cures the target of its burn and restores the user's HP by an amount equal to the target's effective Attack stat. It also resets the target's stat changes. If the target isn't burnt, this move fails.",
+		shortDesc: "Heat Siphon cures the target of its burn and restores the user's HP by an amount equal to the target's effective Attack stat. It also resets the target's stat changes. If the target isn't burnt, this move fails.",
+	},
+	: {
+		name: "",
+		desc: ".",
+		shortDesc: ".",
+	},
+	: {
+		name: "",
+		desc: ".",
+		shortDesc: ".",
+	},
+	: {
+		name: "",
+		desc: ".",
+		shortDesc: ".",
+	},
+	: {
+		name: "",
+		desc: ".",
+		shortDesc: ".",
+	},
+	: {
+		name: "",
+		desc: ".",
+		shortDesc: ".",
+	},
+	: {
+		name: "",
+		desc: ".",
+		shortDesc: ".",
+	},
+	: {
+		name: "",
+		desc: ".",
+		shortDesc: ".",
+	},
+	: {
+		name: "",
+		desc: ".",
+		shortDesc: ".",
+	},
+	: {
+		name: "",
+		desc: ".",
+		shortDesc: ".",
+	},
+	: {
+		name: "",
+		desc: ".",
+		shortDesc: ".",
+	},
+	: {
+		name: "",
+		desc: ".",
+		shortDesc: ".",
+	},
+	: {
+		name: "",
+		desc: ".",
+		shortDesc: ".",
+	},
+	: {
+		name: "",
+		desc: ".",
+		shortDesc: ".",
+	},
+	: {
+		name: "",
+		desc: ".",
+		shortDesc: ".",
+	},
+	: {
+		name: "",
+		desc: ".",
+		shortDesc: ".",
+	},
 };

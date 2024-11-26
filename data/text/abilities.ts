@@ -2268,4 +2268,229 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 
 		activate: "  [POKEMON] extends [MOVE] by 2 turns!",
 	},
+	deathdefiance: {
+		name: "Death Defiance",
+		desc: "Should the user take lethal damage, it will live at 1 HP. This ability can only activate once per battle.",
+		shortDesc: "Should the user take lethal damage, it will live at 1 HP. This ability can only activate once per battle.",
+	},
+	corrosivesurge: {
+		name: "Corrosive Surge",
+		desc: "The user sets Corrosive Terrain on the field.",
+		shortDesc: "The user sets Corrosive Terrain on the field.",
+	},
+	pureguise: {
+		name: "Pure Guise",
+		desc: "At 100% HP, your attacks deal 30% more damage.",
+		shortDesc: "At 100% HP, your attacks deal 30% more damage",
+	},
+	usurped: {
+		name: "Usurped",
+		desc: "The user Taunts the opponent for 3 turns upon switch-in.",
+		shortDesc: "The user Taunts the opponent for 3 turns upon switch-in.",
+	},
+	usurper: {
+		name: "Usurper",
+		desc: "When the user is hit by a contact move, the opponent is paralyzed and trapped for 4 turns.",
+		shortDesc: "When the user is hit by a contact move, the opponent is paralyzed and trapped for 4 turns.",
+	},
+	geyser: {
+		name: "Geyser",
+		desc: "Any offensive move that has a chance to burn, has that chance tripled. Additionally, the Pokemon is immune to Water-type moves.",
+		shortDesc: "Any offensive move that has a chance to burn, has that chance tripled. Additionally, the Pokemon is immune to Water-type moves.",
+	},
+	monarch: {
+		name: "Monarch",
+		desc: "At the end of the turn, if Goolossal is at 100% HP, it will heal its status condition.",
+		shortDesc: "At the end of the turn, if Goolossal is at 100% HP, it will heal its status condition.",
+	},
+	surge: {
+		name: "Surge",
+		desc: "Boost the Pokemon's Attack or Special Attack by 50% when using Electric-type moves when the user has 1/3 of its maximum HP or less remaining.",
+		shortDesc: "Boost the Pokemon's Attack or Special Attack by 50% when using Electric-type moves when the user has 1/3 of its maximum HP or less remaining.",
+	},
+	parasolprayer: {
+		name: "Parasol Prayer",
+		desc: "The user sets Strong Winds on the field. Strong winds cause moves that would be super effective against pure Flying-type Pokémon to instead deal neutral damage to all Flying-type Pokémon.",
+		shortDesc: "The user sets Strong Winds on the field. Strong winds cause moves that would be super effective against pure Flying-type Pokémon to instead deal neutral damage to all Flying-type Pokémon.",
+	},
+	abyssalneigh: {
+		name: "Abyssal Neigh",
+		desc: "When a Pokémon with Abyssal Neigh directly causes another Pokémon (including allies) to faint by using a damaging move, its Special Defense is increased by one stage. If its Special Defense is already at +6 stages, Abyssal Neigh will not activate. ",
+		shortDesc: "When a Pokémon with Abyssal Neigh directly causes another Pokémon (including allies) to faint by using a damaging move, its Special Defense is increased by one stage. If its Special Defense is already at +6 stages, Abyssal Neigh will not activate. ",
+	},
+	twinkle: {
+		name: "Twinkle",
+		desc: "Twinkle boosts the Pokémon's Attack or Special Attack by 50% during damage calculation if a Fairy-type move is being used if the user's HP is under 1/3rd of its maximum.",
+		shortDesc: "Twinkle boosts the Pokémon's Attack or Special Attack by 50% during damage calculation if a Fairy-type move is being used if the user's HP is under 1/3rd of its maximum.",
+	},
+	purranormal: {
+		name: "Purranmoral",
+		desc: "causes the user's stats are increased depending on the types of Pokemon in its party. This ability also only activates while the user is 50% HP or above. If user's speed is higher: The user's speed is raised by 5% up to 50% for every unique type found on the user's team. If the user's SpAtk is higher: The user's SpAtk is raised by 3% up to 30% for each unique type found on the user's team. If all Pokemon on the team share a similar type (Monotype): The user's SpAtk and Speed are raised by 30% and 50% respectively. No further boosts will be given.",
+		shortDesc: "Causes the user's stats are increased depending on the types of Pokemon in its party. This ability also only activates while the user is 50% HP or above.",
+	},
+	covenant: {
+		name: "Covenant",
+		desc: "This Pokemon's Attack and Speed are halved. When the user's HP reaches 50% of its maximum HP,  the ability switches to Huge Powe",
+		shortDesc: "This Pokemon's Attack and Speed are halved. When the user's HP reaches 50% of its maximum HP,  the ability switches to Huge Powe",
+	},
+	desertspirit: {
+		name: "Desert Spirit",
+		desc: "Sound Moves gain a 1.3x boost. The user takes 0.5x damage from sound moves. In sand, its used moves count as sound moves.",
+		shortDesc: "Sound Moves gain a 1.3x boost. The user takes 0.5x damage from sound moves. In sand, its used moves count as sound moves.",
+	},
+	monarchpole: {
+		name: "Monarch's Pole",
+		desc: "Defeating a Pokemon increases the user's speed by one stage; If the Pokémon uses a contact move, it will not activate any effects caused by contact.",
+		shortDesc: "Defeating a Pokemon increases the user's speed by one stage; If the Pokémon uses a contact move, it will not activate any effects caused by contact.",
+	},
+	swordmaster: {
+		name: "Swordmaster",
+		desc: "Chlorophyll + Sharpness",
+		shortDesc: "Chlorophyll + Sharpness",
+	},
+	vorpal: {
+		name: "Vorpal",
+		desc: "While a Pokemon with Vorpal has a status condition, its Speed is increased by 50%. Additionally, a Pokémon with this Ability does not lose Attack due to burn.",
+		shortDesc: "While a Pokemon with Vorpal has a status condition, its Speed is increased by 50%. Additionally, a Pokémon with this Ability does not lose Attack due to burn.",
+	},
+	welkintorch: {
+		name: "Welkin Torch",
+		desc: "Does not take indirect damage.",
+		shortDesc: "Does not take indirect damage.",
+	},
+	chronocatalyst: {
+		name: "Chrono Catalyst",
+		desc: "When a Pokémon with Chrono Catalyst is in harsh sunlight, Electric Terrain or is holding Booster Energy, its highest stat (other than HP and taking into account stat stages, but not held items) is increased by 30%, or 50% if Speed is the highest stat. This does not stack when both harsh sunlight and Electric Terrain are present.",
+		shortDesc: "When a Pokémon with Chrono Catalyst is in harsh sunlight, Electric Terrain or is holding Booster Energy, its highest stat (other than HP and taking into account stat stages, but not held items) is increased by 30%, or 50% if Speed is the highest stat. This does not stack when both harsh sunlight and Electric Terrain are present.",
+	},//Below are pending implementations. 
+	spectreonslaught: {
+		name: "Spectre Onslaught",
+		desc: "Causes most damaging moves used by the Pokemon to become 4-strike moves. The three strikes following the first strike deal 10% the original damage; Night Shade is not affected by this ability. Secondary Effects used by the user are ignored.",
+		shortDesc: "Causes most damaging moves used by the Pokemon to become 4-strike moves. The three strikes following the first strike deal 10% the original damage; Night Shade is not affected by this ability. Secondary Effects used by the user are ignored.",
+	},
+	strongpysche: {
+		name: "Strong Psyche",
+		desc: "Strong Psyche doubles the special attack of the Pokemon",
+		shortDesc: "Strong Psyche doubles the special attack of the Pokemon",
+	},
+	precedence: {
+		name: "Precedence",
+		desc: "Precedence: Priority moves used by this Pokemon deal 30% more Damage",
+		shortDesc: "Precedence: Priority moves used by this Pokemon deal 30% more Damage",
+	},
+	fatalize: {
+		name: "Fatalize",
+		desc: "Fatalize: Causes all Normal-type moves used by the Pokémon to become Dark-type and receive a 20% power",
+		shortDesc: "Fatalize: Causes all Normal-type moves used by the Pokémon to become Dark-type and receive a 20% power",
+	},
+	blazingswap: {
+		name: "Blazing Swap",
+		desc: "Blazing Swap: The use of an offensive move swaps Aegislash from Shield Forme to Sword Forme. The use of Infernal Shield returns it back to its Shield Forme. Also takes 50% less damage from fire-type moves.",
+		shortDesc: "Blazing Swap: The use of an offensive move swaps Aegislash from Shield Forme to Sword Forme. The use of Infernal Shield returns it back to its Shield Forme. Also takes 50% less damage from fire-type moves.",
+	},
+	guardian: {
+		name: "Guardian",
+		desc: "Grants immunity from all statsu condition and can't be flinched.",
+		shortDesc: "Grants immunity from all statsu condition and can't be flinched.",
+	},
+	direambush: {
+		name: "Dire Ambush",
+		desc: "If a Pokémon with Dire Ambush executes its move before all other Pokémon have made their move, the power of its move is increased by 30%",
+		shortDesc: "If a Pokémon with Dire Ambush executes its move before all other Pokémon have made their move, the power of its move is increased by 30%",
+	},
+	taproot: {
+		name: "Taproot",
+		desc: "The user regenerates 1/16th of its maximum HP at the end of each turn. If a Pokémon has the ability Taproot, using a draining move or Strength Sap, it restores 30% more HP than it otherwise would. - Additionally, it regains 30% more HP from Leech Seed, Ingrain and Aqua Ring. It also increases the damage taken by the user from Liquid Ooze.",
+		shortDesc: "The user regenerates 1/16th of its maximum HP at the end of each turn. If a Pokémon has the ability Taproot, using a draining move or Strength Sap, it restores 30% more HP than it otherwise would. - Additionally, it regains 30% more HP from Leech Seed, Ingrain and Aqua Ring. It also increases the damage taken by the user from Liquid Ooze.",
+	},
+	sacredbody: {
+		name: "Sacred Body",
+		desc: "Sacred Body: When the Pokémon with Sacred Body is hit with a contact move, both the attacker and the Pokémon with Sacred Body will be fully healed in three turns. Should a Pokemon under the effect of Sacred Body switch out, the effect is cancelled for that Pokemon",
+		shortDesc: "Sacred Body: When the Pokémon with Sacred Body is hit with a contact move, both the attacker and the Pokémon with Sacred Body will be fully healed in three turns. Should a Pokemon under the effect of Sacred Body switch out, the effect is cancelled for that Pokemon",
+	},
+	hocuspocus: {
+		name: "Hocus Pocus",
+		desc: "Hocus Pocus: Upon switch-in, if a Pokemon using this ability holds the Illusory Sword, it will set-up Trick Room or remove it if Trick Room is already up. This ability activates once per battle. Additionally, if a Pokemon with this ability uses status moves under Trick Room, it will move last within its priority bracket.",
+		shortDesc: "Hocus Pocus: Upon switch-in, if a Pokemon using this ability holds the Illusory Sword, it will set-up Trick Room or remove it if Trick Room is already up. This ability activates once per battle. Additionally, if a Pokemon with this ability uses status moves under Trick Room, it will move last within its priority bracket.",
+	},
+	conductor: {
+		name: "Conductor",
+		desc: "Conductor: User is immune to Sound Moves; Gain priority when using Instruct, Encore, and Tailwind (+1 Priority)",
+		shortDesc: "Conductor: User is immune to Sound Moves; Gain priority when using Instruct, Encore, and Tailwind (+1 Priority)",
+	},
+	performer: {
+		name: "Performer",
+		desc: "Performer: User is immune to sound moves; Dance moves have priority; Sounds moves have increased crit ratio (1 stage)",
+		shortDesc: "Performer: User is immune to sound moves; Dance moves have priority; Sounds moves have increased crit ratio (1 stage)",
+	},
+	crescentform: {
+		name: "Crescent Form",
+		desc: "Takes 50% less damage from Beam, Pulse, and Light moves. Also deals 30% more damage when using these moves.",
+		shortDesc: "Takes 50% less damage from Beam, Pulse, and Light moves. Also deals 30% more damage when using these moves.",
+	},
+	quickwit: {
+		name: "Quick Wit",
+		desc: "+1 priority to offensive move with 60 BP or below.",
+		shortDesc: "+1 priority to offensive move with 60 BP or below.",
+	},
+	breach: {
+		name: "Breach",
+		desc: "Upon switch-in, the user clears hazards on the user's side of the field. Additionally, the user is unaffected by hazards.",
+		shortDesc: "Upon switch-in, the user clears hazards on the user's side of the field. Additionally, the user is unaffected by hazards.",
+	},
+	exalt: {
+		name: "Exalt",
+		desc: "Upon switch-in, the opponent secondary typing becomes Dragon. Additionally, using an offensive move against a pokemon will change the secondary typing to Dragon.",
+		shortDesc: "Upon switch-in, the opponent secondary typing becomes Dragon. Additionally, using an offensive move against a pokemon will change the secondary typing to Dragon.",
+	},
+	igneous: {
+		name: "Igneous",
+		desc: "User takes 50% less damage from fire and water type moves.",
+		shortDesc: "User takes 50% less damage from fire and water type moves.",
+	},
+	prowler: {
+		name: "Prowler",
+		desc: "Defeating a pokemon heals the user by 33%",
+		shortDesc: "Defeating a pokemon heals the user by 33%",
+	},
+	prospect: {
+		name: "Prospect",
+		desc: "At the end of a turn, the user has 50% chance of curing itself of its status. Moves used against you cannot miss.",
+		shortDesc: "At the end of a turn, the user has 50% chance of curing itself of its status. Moves used against you cannot miss.",
+	},
+	chronostasis: {
+		name: "Chronostasis",
+		desc: "While on field, all other pokemon have their speed lowered by 25%.",
+		shortDesc: "While on field, all other pokemon have their speed lowered by 25%.",
+	},
+	chromaticscales: {
+		name: "Chromatic Scales",
+		desc: "As long as this Pokemon is above 50% HP, the type of this Pokemon will change into the first two moves in its moveslots. Losing HP will turn it back into its regular type. When this ability activates, the type it changes to is announced in the battle log.",
+		shortDesc: "As long as this Pokemon is above 50% HP, the type of this Pokemon will change into the first two moves in its moveslots. Losing HP will turn it back into its regular type. When this ability activates, the type it changes to is announced in the battle log.",
+	},
+	evilbane: {
+		name: "Evil's Bane",
+		desc: "Immune to Dark type move and status moves affected by Prankster.",
+		shortDesc: "Immune to Dark type move and status moves affected by Prankster.",
+	},
+	shelteredslumber: {
+		name: "Sheltered Slumber",
+		desc: "While this Pokemon in asleep, its Defense is boosted by 50%. Additionally, it changes type from Water / Ghost to Steel / Ghost.",
+		shortDesc: "While this Pokemon in asleep, its Defense is boosted by 50%. Additionally, it changes type from Water / Ghost to Steel / Ghost.",
+	},
+	surgedeluge: {
+		name: "Surge Deluge",
+		desc: "In Electric Terrain, this Pokemon gains the Charge effect. Its Special Defense rises by one stage when gaining the Charge effect. Additionally, you gain immunity to Ground-type moves in Electric Terrain",
+		shortDesc: "In Electric Terrain, this Pokemon gains the Charge effect. Its Special Defense rises by one stage when gaining the Charge effect. Additionally, you gain immunity to Ground-type moves in Electric Terrain",
+	},
+	forbiddentreat: {
+		name: "Forbidden Treat",
+		desc: "Using bite or drain moves against this pokemon will trap the opponent and inflict them with Curse.",
+		shortDesc: "Using bite or drain moves against this pokemon will trap the opponent and inflict them with Curse.",
+	},
+	nucleicreconstruct: {
+		name: "Nucleic Reconstruct",
+		desc: "When a Pokémon with Nucleic Reconstruct is hit by a physical offensive move, the attacker's Ability is changed to Nucleic Reconstruct. When Labsire switches out with this ability, it regenerates 33% of its maximum HP. When any other Pokemon that has this ability switches out, they lose 10% of their maximum HP.",
+		shortDesc: "When a Pokémon with Nucleic Reconstruct is hit by a physical offensive move, the attacker's Ability is changed to Nucleic Reconstruct. When Labsire switches out with this ability, it regenerates 33% of its maximum HP. When any other Pokemon that has this ability switches out, they lose 10% of their maximum HP.",
+	},
 };

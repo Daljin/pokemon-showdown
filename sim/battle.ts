@@ -1161,6 +1161,9 @@ export class Battle {
 			}
 			return false;
 		}
+		if (move.flags['contact'] && attacker.hasAbility('monarchpole')) {
+			return false;
+		}
 		return !!move.flags['contact'];
 	}
 
