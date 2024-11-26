@@ -7546,15 +7546,25 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 			shortDesc: "Nearly always goes first. Always crits.",
 		},
 	},
-	chillingsilence: {
-		name: "Chilling Silence",
-		desc: "Chilling Silence inflicts damage and always makes the target flinch if used on the first turn. If used any other turn, it inflicts damage but it has no secondary effect. It loses priority after the first turn.",
-		shortDesc: "Chilling Silence inflicts damage and always makes the target flinch if used on the first turn. If used any other turn, it inflicts damage but it has no secondary effect. It loses priority after the first turn.",
+	liftoff: {
+		name: "Lift Off",
+		desc: "Lift Off raises the user's Speed by two stages. It also gives the user the effect of Magnet Rise.",
+		shortDesc: "Lift Off raises the user's Speed by two stages. It also gives the user the effect of Magnet Rise.",
+	},
+	corrosiveterrain: {
+		name: "Corrosive Terrain",
+		desc: "Sets up poisonous terrain.",
+		shortDesc: "Sets up poisonous terrain.",
 	},
 	technobeam: {
 		name: "Techno Beam",
 		desc: "This move's type depends on the drive being used. Dread Drive: Dark-type, Thrash Drive: Fighting-type, Pixie Drive: Fairy-type, Mind Drive: Psychic-type",
 		shortDesc: "This move's type depends on the drive being used.",
+	},//missing implementation
+	chillingsilence: {  
+		name: "Chilling Silence",
+		desc: "Chilling Silence inflicts damage and always makes the target flinch if used on the first turn. If used any other turn, it inflicts damage but it has no secondary effect. It loses priority after the first turn.",
+		shortDesc: "Chilling Silence inflicts damage and always makes the target flinch if used on the first turn. If used any other turn, it inflicts damage but it has no secondary effect. It loses priority after the first turn.",
 	},
 	dragondrive: {
 		name: "Dragon Drive",
@@ -7570,7 +7580,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		name: "Heat Siphon",
 		desc: "Heat Siphon cures the target of its burn and restores the user's HP by an amount equal to the target's effective Attack stat. It also resets the target's stat changes. If the target isn't burnt, this move fails.",
 		shortDesc: "Heat Siphon cures the target of its burn and restores the user's HP by an amount equal to the target's effective Attack stat. It also resets the target's stat changes. If the target isn't burnt, this move fails.",
-	},//missing implementation
+	},
 	ampserum: {
 		name: "Amp Serum",
 		desc: "Amp Serum is a damaging move. Should the move land successfully, the opponent is taunted for 3 turns. This is also a contact move.",
