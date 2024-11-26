@@ -19899,9 +19899,9 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		requiredMove: "Relic Song",
 		battleOnly: "Meloetta Delta",
 	},//below are missing learnsets, items, rulesets.
-	serperiordelta: {
+	serperiorultra: {
 		num: -5021,
-		name: "Serperior Delta",
+		name: "Serperior Ultra",
 		types: ["Water", "Dragon"],
 		genderRatio: {M: 0.875, F: 0.125},
 		baseStats: {hp: 77, atk: 75, def: 95, spa: 75, spd: 95, spe: 111},
