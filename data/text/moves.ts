@@ -7570,80 +7570,195 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		name: "Heat Siphon",
 		desc: "Heat Siphon cures the target of its burn and restores the user's HP by an amount equal to the target's effective Attack stat. It also resets the target's stat changes. If the target isn't burnt, this move fails.",
 		shortDesc: "Heat Siphon cures the target of its burn and restores the user's HP by an amount equal to the target's effective Attack stat. It also resets the target's stat changes. If the target isn't burnt, this move fails.",
+	},//missing implementation
+	ampserum: {
+		name: "Amp Serum",
+		desc: "Amp Serum is a damaging move. Should the move land successfully, the opponent is taunted for 3 turns. This is also a contact move.",
+		shortDesc: "Amp Serum is a damaging move. Should the move land successfully, the opponent is taunted for 3 turns. This is also a contact move.",
 	},
-	: {
-		name: "",
-		desc: ".",
-		shortDesc: ".",
+	seasonalblessing: {
+		name: "Seasonal Blessing",
+		desc: "Winter: Seasonal Blessing changes Snorlax's type from Normal/Grass to Ice/Grass, changes the user's ability to Refrigerate, and sets Aurora Veil. Aurora Veil won't be activated if Snow or Hail isn't on the field. Summer: Seasonal Blessing consumes the user's Berry. If done successfully, it raises the user's Defense and Special Defense by one stage. If the user isn't holding a berry, the move cannot be selected. Autumn: Seasonal Blessing raises the user's Attack and Special Attack by one stage. This move can be used when the user is asleep, in which case the effect is increased to two stages. Spring: Seasonal Blessing replenishes the user's HP to 100% of its maximum HP if under the effects of Grassy Terrain. Afterwards, it destroys Grassy Terrain. This move will fail outside of Grassy Terrain. Cherry: Seasonal Blessing afflicts the opponent with Leech Seed. If the opponent has an item, it will be knocked off.",
+		shortDesc: "This move's effect changes between the different seasonal forms of Snorlax.",
 	},
-	: {
-		name: "",
-		desc: ".",
-		shortDesc: ".",
+	updraft: {
+		name: "Updraft",
+		desc: "Updraft inflicts damage. Opponents hit with the move have their ability changed to Levitate until they leave the field or faint.",
+		shortDesc: "Updraft inflicts damage. Opponents hit with the move have their ability changed to Levitate until they leave the field or faint.",
 	},
-	: {
-		name: "",
-		desc: ".",
-		shortDesc: ".",
+	pearlyparade: {
+		name: "Pearly Parade",
+		desc: "Pearly Parade inflicts damage and lowers the user's Special Attack by one stage. In a battle with multiple opponents, Pearly Parade will target all adjacent opponents.",
+		shortDesc: "Pearly Parade inflicts damage and lowers the user's Special Attack by one stage. In a battle with multiple opponents, Pearly Parade will target all adjacent opponents.",
 	},
-	: {
-		name: "",
-		desc: ".",
-		shortDesc: ".",
+	pollenbloom: {
+		name: "Pollen Bloom",
+		desc: "On the turn it is selected, Pollen Bloom will raise the user's Special Attack stat by one stage. On the following turn, Pollen Bloom will do damage (factoring in the Special Attack boost), PP will be deducted from it, and it will count as the last move used. Once Pollen Bloom is selected, the user won't be able to switch out until it is disrupted or fully executed. Pollen Bloom will not need a turn to charge if used during sun. ",
+		shortDesc: "On the turn it is selected, Pollen Bloom will raise the user's Special Attack stat by one stage. On the following turn, Pollen Bloom will do damage (factoring in the Special Attack boost), PP will be deducted from it, and it will count as the last move used. Once Pollen Bloom is selected, the user won't be able to switch out until it is disrupted or fully executed. Pollen Bloom will not need a turn to charge if used during sun. ",
 	},
-	: {
-		name: "",
-		desc: ".",
-		shortDesc: ".",
+	foamfrenzy: {
+		name: "Foam Frenzy",
+		desc: "This move inflicts damage on the opponent. If this move lands successfully, any hazards are present on the user's side of the field will disappear. Successfully clearing hazards off the user's side of the field will boost the base power of the move by 1.5x and additionally increase the user's SpAtk by one stage.",
+		shortDesc: "This move inflicts damage on the opponent. If this move lands successfully, any hazards are present on the user's side of the field will disappear. Successfully clearing hazards off the user's side of the field will boost the base power of the move by 1.5x and additionally increase the user's SpAtk by one stage.",
 	},
-	: {
-		name: "",
-		desc: ".",
-		shortDesc: ".",
+	steelskewer: {
+		name: "Steel Skewer",
+		desc: "Steel Skewer inflicts damage and sets up Sharp Steel on the opposing side of the field. Pokémon on the target's field receive damage upon switching in. The amount of damage inflicted upon switching in is affected by the effectiveness of Steel against the target.",
+		shortDesc: "Steel Skewer inflicts damage and sets up Sharp Steel on the opposing side of the field. Pokémon on the target's field receive damage upon switching in. The amount of damage inflicted upon switching in is affected by the effectiveness of Steel against the target.",
 	},
-	: {
-		name: "",
-		desc: ".",
-		shortDesc: ".",
+	planetdemolition: {
+		name: "Planet Demolition",
+		desc: "Planet Demolition inflicts damage and lowers the user's Attack and Defense by one stage. Not Contact. Bullet Move",
+		shortDesc: "Planet Demolition inflicts damage and lowers the user's Attack and Defense by one stage. Not Contact. Bullet Move.",
 	},
-	: {
-		name: "",
-		desc: ".",
-		shortDesc: ".",
+	bileofwinter: {
+		name: "Bile of Winter",
+		desc: "Bite of Winter restores the user's current HP based on the weather in the battle. During no weather or during strong winds it restores 1/2 total HP, during Snow, it restores 2/3 total HP. In other weather, it restores 1/4 total HP.",
+		shortDesc: "Bite of Winter restores the user's current HP based on the weather in the battle. During no weather or during strong winds it restores 1/2 total HP, during Snow, it restores 2/3 total HP. In other weather, it restores 1/4 total HP.",
 	},
-	: {
-		name: "",
-		desc: ".",
-		shortDesc: ".",
+	shockingblow: {
+		name: "Shocking Blow",
+		desc: "This move inflicts damage and has a high crit ratio.",
+		shortDesc: "This move inflicts damage and has a high crit ratio.",
 	},
-	: {
-		name: "",
-		desc: ".",
-		shortDesc: ".",
+	spectrumscorch: {
+		name: "Spectrum Scorch",
+		desc: "This move inflicts damage. If it lands, the user creates harsh sunlight for 4 turns.",
+		shortDesc: "This move inflicts damage. If it lands, the user creates harsh sunlight for 4 turns.",
 	},
-	: {
-		name: "",
-		desc: ".",
-		shortDesc: ".",
+	dualdivide: {
+		name: "Dual Divide",
+		desc: "This move hits twice. Additionally, it deals super-effective damage to Steel types. This is a slicing move.",
+		shortDesc: "This move hits twice. Additionally, it deals super-effective damage to Steel types. This is a slicing move.",
 	},
-	: {
-		name: "",
-		desc: ".",
-		shortDesc: ".",
+	phantasmalvoyage: {
+		name: "Phantasmal Voyage",
+		desc: "Phantasmal Voyage deals damage and sets Tailwind for 4 turns. If Tailwind is already up, it will not set it again. Goes through protection moves.",
+		shortDesc: "Phantasmal Voyage deals damage and sets Tailwind for 4 turns. If Tailwind is already up, it will not set it again. Goes through protection moves.",
 	},
-	: {
-		name: "",
-		desc: ".",
-		shortDesc: ".",
+	moonriftstorm: {
+		name: "Moonrift Storm",
+		desc: "This move has a 10% chance to flinch. When used in Rain, Snow, Sand, or Sun, this move's accuracy is lowered to 50%.",
+		shortDesc: "This move has a 10% chance to flinch. When used in Rain, Snow, Sand, or Sun, this move's accuracy is lowered to 50%.",
 	},
-	: {
-		name: "",
-		desc: ".",
-		shortDesc: ".",
+	barbaricincision: {
+		name: "Barbaric Incision",
+		desc: "The power of this move doubles when the user has a status condition.",
+		shortDesc: "The power of this move doubles when the user has a status condition.",
 	},
-	: {
-		name: "",
-		desc: ".",
-		shortDesc: ".",
+	putridgrasp: {
+		name: "Putrid Grasp",
+		desc: "This move heals the user by 50% of the damage dealt.",
+		shortDesc: "This move heals the user by 50% of the damage dealt.",
+	},
+	timelesstorrent: {
+		name: "Timeless Torrent",
+		desc: "The opponent is warped in a torrent of time. This move has a 10% chance to lower Special Defense. If the user knocks out a Pokemon using this move in Electric Terrain, the user's Speed increases by one stage. If the user knocks out a Pokemon using this move in harsh sunlight, the user's Special Attack increases by one stage. If both are active, both stats are raised. If no terrain is active when this move defeats a Pokemon, the user heals 10% of its maximum HP.",
+		shortDesc: "The opponent is warped in a torrent of time. This move has a 10% chance to lower Special Defense. If the user knocks out a Pokemon using this move in Electric Terrain, the user's Speed increases by one stage. If the user knocks out a Pokemon using this move in harsh sunlight, the user's Special Attack increases by one stage. If both are active, both stats are raised. If no terrain is active when this move defeats a Pokemon, the user heals 10% of its maximum HP.",
+	},
+	peculiarcandy: {
+		name: "Peculiar Candy",
+		desc: "Peculiar Candy inflicts damage and has a 20% chance to either Paralysis, Burn, or Poison the target.",
+		shortDesc: "Peculiar Candy inflicts damage and has a 20% chance to either Paralysis, Burn, or Poison the target.",
+	},
+	primedcurrent: {
+		name: "Primed Current",
+		desc: "Primed Current inflicts damage to all adjacent Pokemon including allies and has a 20% chance to paralyze. This move heals the user by 50% of the damage dealt.",
+		shortDesc: "Primed Current inflicts damage to all adjacent Pokemon including allies and has a 20% chance to paralyze. This move heals the user by 50% of the damage dealt.",
+	},
+	coffeesplatter: {
+		name: "Coffee Splatter",
+		desc: "Coffee Splatter inflicts damage to all adjacent Pokemon including allies and can be used while this Pokemon is asleep.  If the user is asleep when using this move, it will deal 50% more damage. If the user or adjacent Pokemon is under the sleep condition, it wakes them up. This move has a 30% chance to burn.",
+		shortDesc: "Coffee Splatter inflicts damage to all adjacent Pokemon including allies and can be used while this Pokemon is asleep.  If the user is asleep when using this move, it will deal 50% more damage. If the user or adjacent Pokemon is under the sleep condition, it wakes them up. This move has a 30% chance to burn.",
+	},
+	reckoning: {
+		name: "Reckoning",
+		desc: "This move deals damage to the opposing target. 20% Chance to lower SpDef. If a Dark-type move were to be used against the user, this move's Base Power is doubled for the rest of the battle.",
+		shortDesc: "This move deals damage to the opposing target. 20% Chance to lower SpDef. If a Dark-type move were to be used against the user, this move's Base Power is doubled for the rest of the battle.",
+	},
+	fluxemission: {
+		name: "Flux Emission",
+		desc: "This move only works when the user's ability is Chronostasis. Otherwise, the move fails. This move changes the user's ability to Speed Boost. If the move is successful, the user's Special Attack increases by 1 stage.",
+		shortDesc: "This move only works when the user's ability is Chronostasis. Otherwise, the move fails. This move changes the user's ability to Speed Boost. If the move is successful, the user's Special Attack increases by 1 stage.",
+	},
+	divination: {
+		name: "Divination",
+		desc: "On the turn Divination is selected, this attack will do nothing other than say that the user has foreseen an attack. Two turns later, Divination will do damage against the target. It's a Dark-type equivalent of Future Sight. If the user has a status effect, it will inflict it on the opponent when using the move.",
+		shortDesc: "On the turn Divination is selected, this attack will do nothing other than say that the user has foreseen an attack. Two turns later, Divination will do damage against the target. It's a Dark-type equivalent of Future Sight. If the user has a status effect, it will inflict it on the opponent when using the move.",
+	},
+	tomahawkvolley: {
+		name: "Tomahawk Valley",
+		desc: "Tomahawk Volley is a non-contact Fire-type move that hits 2-5 times.",
+		shortDesc: "Tomahawk Volley is a non-contact Fire-type move that hits 2-5 times.",
+	},
+	seekingembers: {
+		name: "Seeking Embers",
+		desc: "Seeking Embers is a contact fire-type move that damages the opponent. Should the opponent attempt to switch out, Seeking Embers will hit the opponent with double the base power before letting it switch out. This move targets the opponent's Special Defense.",
+		shortDesc: "Seeking Embers is a contact fire-type move that damages the opponent. Should the opponent attempt to switch out, Seeking Embers will hit the opponent with double the base power before letting it switch out. This move targets the opponent's Special Defense.",
+	},
+	chillingvenom: {
+		name: "Chilling Venom",
+		desc: "This move inflicts damage. It has a 30% chance to poison. It can also poison Steel-type and Posion-type Pokemon. In Corrossive Terrain, this chance is doubled.",
+		shortDesc: "This move inflicts damage. It has a 30% chance to poison. It can also poison Steel-type and Posion-type Pokemon. In Corrossive Terrain, this chance is doubled.",
+	},
+	bizarreelixir: {
+		name: "Bizarre Elixir",
+		desc: "The user infuses an elixir with its held item. The held item is consumed. The resulting effect depends on the item!",
+		shortDesc: "The user infuses an elixir with its held item. The held item is consumed. The resulting effect depends on the item!",
+	},
+	thebelltolls: {
+		name: "The Bell Tolls",
+		desc: "Sets Perish Song on the opponent. This move cannot be used twice in a row.",
+		shortDesc: "Sets Perish Song on the opponent. This move cannot be used twice in a row.",
+	},
+	soulsap: {
+		name: "Soul Sap",
+		desc: "The user saps the life force from its opponent. If it lands successfully, the user recovers 1 PP. If the target used a move previously, the target loses 2 PP simultaneously. It is Special or Physical depending on the user's highest offensive stat.This move cannot be used consecutively.",
+		shortDesc: "The user saps the life force from its opponent. If it lands successfully, the user recovers 1 PP. If the target used a move previously, the target loses 2 PP simultaneously. It is Special or Physical depending on the user's highest offensive stat. This move cannot be used consecutively.",
+	},
+	adamantinemolars: {
+		name: "Adamantine Molars",
+		desc: "Adamantine Molars is a physical move that has a 20% chance to lower the opponent's defense. It is affected by Strong Jaws.",
+		shortDesc: "Adamantine Molars is a physical move that has a 20% chance to lower the opponent's defense. It is affected by Strong Jaws.",
+	},
+	decisivebolt: {
+		name: "Decisive Bolt",
+		desc: "No additional effect.",
+		shortDesc: "No additional effect.",
+	},
+	iaislash: {
+		name: "Iai Slash",
+		desc: "If Iai Slash's target has selected a physical or special attack and has not yet had a chance to execute its move, Iai Slash will damage the target; otherwise, Iai Slash will fail.",
+		shortDesc: "If Iai Slash's target has selected a physical or special attack and has not yet had a chance to execute its move, Iai Slash will damage the target; otherwise, Iai Slash will fail.",
+	},
+	colddeparture: {
+		name: "Cold Departure",
+		desc: "The user leaves the field callously. Before switching out, this lower's the target's Defense, Special Defense, and Speed by one stage.",
+		shortDesc: "The user leaves the field callously. Before switching out, this lower's the target's Defense, Special Defense, and Speed by one stage.",
+	},
+	infernalshield: {
+		name: "Infernal Shield",
+		desc: "The user protects itself from offensive moves. Status moves are not stopped by Infernal Shield. If the opponent makes contact with the user when Infernal Shield is up, the opponent is afflicted with Burn.",
+		shortDesc: "The user protects itself from offensive moves. Status moves are not stopped by Infernal Shield. If the opponent makes contact with the user when Infernal Shield is up, the opponent is afflicted with Burn.",
+	},
+	enflame: {
+		name: "Enflame",
+		desc: "Shield: Enflame restores the HP of the user by 25% of its max HP. Sword: Enflame deals damage. If the user's Special Attack stat is higher than its Attack stat, Enflame becomes a special move and vice versa.",
+		shortDesc: "Shield: Enflame restores the HP of the user by 25% of its max HP. Sword: Enflame deals damage. If the user's Special Attack stat is higher than its Attack stat, Enflame becomes a special move and vice versa.",
+	},
+	wretchedstab: {
+		name: "Wretched Stab",
+		desc: "The user attacks to avenge its allies. The more defeated allies there are in the user's party, the greater the move's power. It hits 2-5 times.",
+		shortDesc: "The user attacks to avenge its allies. The more defeated allies there are in the user's party, the greater the move's power. It hits 2-5 times..",
+	},
+	crimsonstorm: {
+		name: "Crimson Storm",
+		desc: "Crimson Storm inflicts damage. It bypasses the effects of Protect, Detect, Spiky Shield, King's Shield, and Baneful Bunker, but does not lift the effects of these moves.",
+		shortDesc: "Crimson Storm inflicts damage. It bypasses the effects of Protect, Detect, Spiky Shield, King's Shield, and Baneful Bunker, but does not lift the effects of these moves.",
+	},
+	gigatonanchor: {
+		name: "Gigaton Anchor",
+		desc: "This move inflicts damage. It cannot be used consecutively. This move deals super-effective damage to Water-type Pokemon.",
+		shortDesc: "This move inflicts damage. It cannot be used consecutively. This move deals super-effective damage to Water-type Pokemon.",
 	},
 };

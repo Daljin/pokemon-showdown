@@ -6089,12 +6089,197 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: -25,
 	},
+	/*
 	spectreonslaught: {
 		//missing implementation
 		flags: {},
 		name: "Spectre Onslaught",
 		rating: 3.5,
-		num: -25,
-	}
-	//
+		num: -26,
+	},
+	strongpysche: {
+		//missing implementation
+		flags: {},
+		name: "Strong Psyche",
+		rating: 3.5,
+		num: -27,
+	},
+	precedence: {
+		//missing implementation
+		flags: {},
+		name: "Precedence",
+		rating: 3.5,
+		num: -28,
+	},
+	fatalize: {
+		//missing implementation
+		flags: {},
+		name: "Fatalize",
+		rating: 3.5,
+		num: -29,
+	},
+	blazingswap: {
+		//missing implementation
+		flags: {},
+		name: "Blazing Swap",
+		rating: 3.5,
+		num: -30,
+	},
+	guardian: {
+		//missing implementation
+		flags: {},
+		name: "Guardian",
+		rating: 3.5,
+		num: -31,
+	},
+	direambush: {
+		//missing implementation
+		flags: {},
+		name: "Dire Ambush",
+		rating: 3.5,
+		num: -32,
+	},
+	taproot: {
+		//missing implementation
+		flags: {},
+		name: "Taproot",
+		rating: 3.5,
+		num: -33,
+	},
+	sacredbody: {
+		//missing implementation
+		flags: {},
+		name: "Sacred Body",
+		rating: 3.5,
+		num: -34,
+	},
+	hocuspocus: {
+		//missing implementation
+		flags: {},
+		name: "Hocus Pocus",
+		rating: 3.5,
+		num: -35,
+	},
+	conductor: {
+		//missing implementation
+		flags: {},
+		name: "Conductor",
+		rating: 3.5,
+		num: -36,
+	},
+	performer: {
+		//missing implementation
+		flags: {},
+		name: "Performer",
+		rating: 3.5,
+		num: -37,
+	},
+	crescentform: {
+		//missing implementation
+		flags: {},
+		name: "Crescent Form",
+		rating: 3.5,
+		num: -38,
+	},
+	quickwit: {
+		//missing implementation
+		flags: {},
+		name: "Quick Wit",
+		rating: 3.5,
+		num: -39,
+	},
+	breach: {
+		//missing implementation
+		flags: {},
+		name: "Breach",
+		rating: 3.5,
+		num: -40,
+	},
+	exalt: {
+		//missing implementation
+		flags: {},
+		name: "Exalt",
+		rating: 3.5,
+		num: -41,
+	},
+	igneous: {
+		//missing implementation
+		flags: {},
+		name: "Igneous",
+		rating: 3.5,
+		num: -42,
+	},
+	prowler: {
+		//missing implementation
+		flags: {},
+		name: "Prowler",
+		rating: 3.5,
+		num: -43,
+	},
+	prospect: {
+		//missing implementation
+		flags: {},
+		name: "Prospect",
+		rating: 3.5,
+		num: -44,
+	},
+	chronostasis: {
+		//missing implementation
+		flags: {},
+		name: "Chronostasis",
+		rating: 3.5,
+		num: -45,
+	},
+	chromaticscales: {
+		//missing implementation
+		flags: {},
+		name: "Chromatic Scales",
+		rating: 3.5,
+		num: -46,
+	},
+	evilbane: {
+		//missing implementation
+		flags: {},
+		name: "Evil's Bane",
+		rating: 3.5,
+		num: -47,
+	},
+	shelteredslumber: {
+		//missing implementation
+		flags: {},
+		name: "Sheltered Slumber",
+		rating: 3.5,
+		num: -48,
+	},
+	surgedeluge: {
+		//missing implementation
+		flags: {},
+		name: "Surge Deluge",
+		rating: 3.5,
+		num: -49,
+	},
+	forbiddentreat: {
+		//missing implementation
+		flags: {},
+		name: "Forbidden Treat",
+		rating: 3.5,
+		num: -50,
+	},
+
+	nucleicreconstruct: {
+		//missing implementation
+		flags: {},
+		name: "Nucleic Reconstruct",
+		rating: 3.5,
+		num: -51,
+	},
+
+	purranormal: {
+		//missing implementation
+		flags: {},
+		name: "Purranmoral",
+		rating: 3.5,
+		num: -52,
+	},
+	*/
 };
