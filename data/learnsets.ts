@@ -107299,7 +107299,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			pursuit: ["9M"],
 		},
 	},
-	shrookle: {
+	shrookledelta: {
 		learnset: {
 			withdraw: ["9M"],
 			rapidspin: ["9M"],
@@ -107394,7 +107394,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			ragepowder: ["9M"],
 		},
 	},
-	slaughtermause: {
+	slaughtermaus: {
 		learnset: {
 			suckerpunch: ["9M"],
 			poweruppunch: ["9M"],
@@ -108636,5 +108636,8 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			meteorbeam: ["9M"],
 			psychicnoise: ["9M"],
 		},
+	},
+	spiritombunbound: {
+		eventOnly: true,
 	},
 };

@@ -20285,7 +20285,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		color: "Gray",
 		eggGroups: ["Mineral"],
 	},
-	shrookle: {
+	shrookledelta: {
 		num: -5061, //missing move
 		name: "Shrookle Delta",
 		types: ["Bug", "Poison"],

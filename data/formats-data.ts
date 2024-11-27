@@ -6535,13 +6535,13 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		doublesTier: "DUU",
 		natDexTier: "OU",
 	},
-	shrookle: {
+	shrookledelta: {
 		isNonstandard: "Past",
 		tier: "OU",
 		doublesTier: "DUU",
 		natDexTier: "OU",
 	},
-	slaughtermause: {
+	slaughtermaus: {
 		isNonstandard: "Past",
 		tier: "OU",
 		doublesTier: "DUU",
@@ -6619,4 +6619,17 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		doublesTier: "DUU",
 		natDexTier: "OU",
 	},
+	lucaurus: {
+		isNonstandard: "Past",
+		tier: "OU",
+		doublesTier: "DUU",
+		natDexTier: "OU",
+	},
+	spiritombunbound: {
+		isNonstandard: "Past",
+		tier: "OU",
+		doublesTier: "DUU",
+		natDexTier: "OU",
+	}
+
 };
